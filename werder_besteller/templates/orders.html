@@ -1,1 +1,17 @@
-# Placeholder for templates/orders.html
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestellung für {{ game.opponent }}</title>
+</head>
+<body>
+  <h1>Bestellung für Spiel gegen {{ game.opponent }}</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.amount.label }} {{ form.amount() }}</p>
+    <p>{{ form.comment.label }} {{ form.comment() }}</p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  <a href="{{ url_for('dashboard') }}">Zurück zum Dashboard</a>
+</body>
+</html>

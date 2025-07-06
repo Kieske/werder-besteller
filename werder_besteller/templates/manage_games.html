@@ -1,1 +1,24 @@
-# Placeholder for templates/manage_games.html
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Spiele verwalten</title>
+</head>
+<body>
+  <h1>Spiele verwalten</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.opponent.label }} {{ form.opponent() }}</p>
+    <p>{{ form.date.label }} {{ form.date() }}</p>
+    <p>{{ form.deadline.label }} {{ form.deadline() }}</p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  <h2>Spieltermine</h2>
+  <ul>
+    {% for game in games %}
+      <li>{{ game.date }} gegen {{ game.opponent }} {% if game.deadline %}(Frist: {{ game.deadline }}){% endif %}</li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('dashboard') }}">Zurück zum Dashboard</a>
+</body>
+</html>
