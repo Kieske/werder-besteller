@@ -1,3 +1,4 @@
+<!-- templates/login.html -->
 <!doctype html>
 <html lang="de">
 <head>
@@ -12,5 +13,14 @@
     <p>{{ form.password.label }} {{ form.password() }}</p>
     <p>{{ form.submit() }}</p>
   </form>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
 </body>
 </html>

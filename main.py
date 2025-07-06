@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, date
-from forms import LoginForm, OrderForm, UserForm, GameForm
+from werder_besteller.forms import LoginForm, OrderForm, UserForm, GameForm
 import smtplib
 from email.mime.text import MIMEText
 
