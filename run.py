@@ -1,8 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import db, User, Game, Order
-from forms import LoginForm, RegisterForm, OrderForm, GameForm
+from werder_besteller.models import db, User, Game, Order
+from werder_besteller.forms import LoginForm, RegisterForm, OrderForm, GameForm
 import os
 
 app = Flask(__name__)
